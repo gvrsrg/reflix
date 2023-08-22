@@ -2,7 +2,7 @@ import React from 'react'
 import MovieCard from './MovieCard'
 import SubHeader from './SubHeader'
 
-export default function Catalog({movieList, activeUser, rentMovie, balance, setTrandingMovies}) {
+export default function Catalog({clearRented, movieList, activeUser, rentMovie, balance, setTrandingMovies}) {
     
 
 
@@ -20,7 +20,7 @@ export default function Catalog({movieList, activeUser, rentMovie, balance, setT
 
   return (
     <div className='movie-list'>
-        <SubHeader balance={balance} setTrandingMovies={setTrandingMovies} activeUser={activeUser} action={rentMovie}/>
+        <SubHeader clearRented={clearRented} balance={balance} setTrandingMovies={setTrandingMovies} activeUser={activeUser} action={rentMovie}/>
         <div className='rented'>{rentedBlock}</div>
         <p><h2>Catalog</h2></p>
         <div className='catalog'>{movieList.map((movie) => (<MovieCard movie={movie} rented={false} action={rentMovie} key={movie.id}/>) )}</div>

@@ -1,16 +1,19 @@
 import React, { useEffect, useState } from 'react'
 import { BEARER, MOVIE_DB_API_KEY, MOVIE_DB_SEARCH_URL } from '../../Constants'
 
-export default function SubHeader({balance, setTrandingMovies, activeUser, action}) {
+export default function SubHeader({clearRented, balance, setTrandingMovies, activeUser, action}) {
     const [searchText, setSearchText] = useState('')
+
+
+
+
 
     async function getMovies() {
         if (searchText==="") {
             return
         }
 
-        let rentedMovies = [...activeUser.rentedMovies]
-        rentedMovies.forEach(m => action(m.id))
+        clearRented()
 
         const options = {
             method: 'GET',

@@ -68,6 +68,16 @@ function App() {
     setActiveUser(activeUser);
 }
 
+const clearRented = function(){
+  let rentedMovies = [...activeUser.rentedMovies]
+  let returnBalance = 0
+  rentedMovies.forEach(m => returnBalance += m.rentCost)
+  activeUser.rentedMovies = []
+  setBalance( balance + returnBalance)
+  setActiveUser(activeUser);
+
+
+}
 
 
   return (
@@ -78,7 +88,7 @@ function App() {
         </div>
         <Routes>
           <Route path="/" element={<Landing chooseUser={chooseUser}/>} />
-          <Route path="/catalog" element={<Catalog movieList={trandingMovies} activeUser={activeUser} rentMovie={rentMovie} balance={balance} setTrandingMovies={setTrandingMovies}/>} />
+          <Route path="/catalog" element={<Catalog clearRented={clearRented} movieList={trandingMovies} activeUser={activeUser} rentMovie={rentMovie} balance={balance} setTrandingMovies={setTrandingMovies}/>} />
           <Route path="/movies/:id" element={<MovieDescription />} />
         </Routes>
     </Router>
