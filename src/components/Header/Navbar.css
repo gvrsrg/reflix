@@ -1,0 +1,33 @@
+.navbar {
+    display: inline-flex;
+    float: left;
+    justify-content: flex-start; /* align navbar to the left */
+    color: #fff;
+    padding: 0 16px;
+    text-align: left;
+  }
+  
+  .navbar a {
+    margin-top: 10px;
+    margin-left: 10px;
+    color: #fff;
+    text-decoration: none;
+    margin-right: 16px;
+    font-size: 36px;
+    color:white;
+    font-weight: bold;
+    font-family: cursive;
+  }
+
+  .logo {
+    position: absolute;
+    right: 10px;
+    margin-top: 10px;
+    margin-left: 10px;
+    color: #61dbfb;
+    text-decoration: none;
+    margin-right: 16px;
+    font-size: 36px;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+  }

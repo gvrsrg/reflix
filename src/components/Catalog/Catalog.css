@@ -1,0 +1,98 @@
+.rented {
+    display: inline-block;
+    align-items: center;
+    justify-content: center;
+    background-size: cover;
+    background-position: left;
+    font-family: cursive;
+    width: 100%;
+  }
+
+  .catalog {
+    display: inline-block;
+    align-items: start;
+    justify-content: start;
+    background-size: cover;
+    background-position: center;
+    font-family: cursive;
+    width: 100%;
+}
+
+  .add-rent {
+    display: inline-block;
+    border-radius: 32px;
+    border: solid white;
+    width: 32px;
+    height: 32px;
+    background-color: white;
+    color: black;
+    margin-top: 0;
+    position: absolute;
+    top:10px;
+    right:10px;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 32px; 
+    font-size: 32px;
+    cursor: pointer;
+  }
+
+
+.movie-card {
+    background-color: #F5F5DC;
+    border: 1px solid #ffffff;
+    border-radius: 4px;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
+    margin-bottom: 16px;
+    padding: 16px;
+    width: 300px;
+    height: 450px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content:flex-start;
+    background-size: cover;
+    background-position: center;
+    font-family: cursive;
+    border-radius: 25px;
+    min-height: 450px;
+    perspective: 1000px;
+    float: left;
+
+
+  }
+  
+  .movie-card h2 {
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+    margin: 0;
+    text-align: left;
+    color: white;
+  }
+  
+  .movie-card p {
+    color: rgb(255, 255, 255);
+    font-family: serif;
+    font-weight: bold;
+    font-size: 18px;
+    margin: 8px 0;
+    text-align: left;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 8px;
+    border-radius: 25px;
+
+
+  }
+  
+  .movie-list {
+    display: block;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 0;
+  }
+  
+  .movie-list .movie-card {
+    margin: 16px;
+  }
+  
