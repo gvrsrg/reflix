@@ -6,12 +6,15 @@ import Catalog from './components/Catalog/Catalog';
 import MovieDescription from './components/Catalog/MovieDescription';
 import Landing from './components/Landing';
 import { BEARER } from './Constants';
+import Modal from './components/Catalog/Modal';
 
 
 function App() {
   let [trandingMovies, setTrandingMovies] = useState([])
   let [activeUser, setActiveUser] = useState()
   let [balance, setBalance] = useState(0)
+  let [showModal, setShowModal] = useState(false)
+  let [lastRented, setLastRented] = useState("")
 
   useEffect(() => {
     async function getSomeMovies() {
@@ -30,6 +33,10 @@ function App() {
     }
     getSomeMovies()
     }, [])
+
+    // useEffect(()=>{
+    //   <Modal show={showModal} onClose={()=>setShowModal(false)}/>
+    // },[showModal])
 
   const chooseUser = function(user){
     setActiveUser(user)
@@ -50,6 +57,8 @@ function App() {
         newBalance -= movie.rentCost;
         activeUser.balance = newBalance;
         activeUser.rentedMovies.push(movie);
+        setShowModal(true)
+        setLastRented(movie.original_title)
         } else {
            alert(`You balance is $${activeUser.balance}, to rent a movie costs $${movie.rentCost}`);
           return;
@@ -84,6 +93,7 @@ const clearRented = function(){
     <Router>
         <div className="App">
           <Navbar activeUser={activeUser}/>
+          <Modal show={showModal} movieName={lastRented} onClose={()=>setShowModal(false)}/>
 
         </div>
         <Routes>

@@ -44,6 +44,7 @@ export default function SubHeader({clearRented, balance, setTrandingMovies, acti
     <input
       autoFocus
       type='text'
+      id='live-search-field'
       autoComplete='off'
       className='live-search-field'
       placeholder='Search movie...'

@@ -22,7 +22,7 @@ export default function Catalog({clearRented, movieList, activeUser, rentMovie, 
     <div className='movie-list'>
         <SubHeader clearRented={clearRented} balance={balance} setTrandingMovies={setTrandingMovies} activeUser={activeUser} action={rentMovie}/>
         <div className='rented'>{rentedBlock}</div>
-        <p><h2>Catalog</h2></p>
+        <h2><p>Catalog</p></h2>
         <div className='catalog'>{movieList.map((movie) => (<MovieCard movie={movie} rented={false} action={rentMovie} key={movie.id}/>) )}</div>
     </div>
   )
